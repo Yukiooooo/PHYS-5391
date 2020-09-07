@@ -1,2 +1,2 @@
 # PHYS-5391
-This is work space for PHYS 5391 assignments.
+This is the working space for PHYS 5391 assignments.
