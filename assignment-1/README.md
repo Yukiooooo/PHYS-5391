@@ -1,6 +1,6 @@
-This is a Latex template for my future write-ups. Please download all the stuffs in this folder or 
+# This is a Latex template for my future write-ups. 
 
-# Introduction to each file
+## Introduction to each file
 assignment1.tex % this is the source code of LaTex
 
 assignment1.bib % this is the source code of BibTex
@@ -9,7 +9,8 @@ Makefile % this is the Makefile for compiling the above two codes
 
 rick-morty.png % this is the figure to be inserted into the LaTex code and final .pdf
 
-# How to compile these files
+## How to compile these files
+Please download all the stuffs in this folder or 
 $ git clone 
 
 
