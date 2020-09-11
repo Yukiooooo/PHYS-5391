@@ -1,11 +1,11 @@
 # This is a Latex template for my future write-ups. 
 
 ## Introduction to each file
-assignment1.tex % this is the source code of LaTex
+*assignment1.tex* % this is the source code of LaTex
 
-assignment1.bib % this is the source code of BibTex
+_assignment1.bib_ % this is the source code of BibTex
 
-Makefile % this is the Makefile for compiling the above two codes
+**Makefile** % this is the Makefile for compiling the above two codes
 
 rick-morty.png % this is the figure to be inserted into the LaTex code and final .pdf
 
