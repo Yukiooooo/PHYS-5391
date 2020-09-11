@@ -15,11 +15,11 @@
 Please download all the stuffs in this folder or use your command and type:
 $ git clone 
 
-If you use the command line, there are two basic ways to complete the .tex code.
+If you use the command line, there are two basic ways to complete my codes.
 
 __Method 1: # using Makefile #__
 
-$ make % very straghtforward 
+$ make % very straightforward to compile all the steps and get the final .pdf
 
 $ make clean % use this if you want to clear all the files created by $ make
 
