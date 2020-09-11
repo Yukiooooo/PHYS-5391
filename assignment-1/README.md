@@ -9,20 +9,23 @@
 
 **rick-morty.png** % this is the figure to be inserted into the LaTex code and final .pdf
 
-## How to compile these files
-Please download all the stuffs in this folder or 
-$ git clone 
+**arrow.py** % this is the python code to be inserted into the final .pdf
 
+## How to compile these files
+Please download all the stuffs in this folder or use your command and type:
+$ git clone 
 
 If you use the command line, there are two basic ways to complete the .tex code.
 
-Method 1: # using Makefile #
-$ make 
+_Method 1: # using Makefile #_
+$ make % 
 
-Method 2: 
+_Method 2: # Compile by steps #
 
 $ pdflatex assignment1.tex
 
-$ bibtex assignment 
+$ pdflatex assignment1.tex
 
-$ pdflatex assignment
+$ bibtex assignment1 
+
+$ pdflatex assignment1.tex
