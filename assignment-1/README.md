@@ -12,8 +12,8 @@
 **arrow.py** % this is the python code to be inserted into the final .pdf
 
 ## How to compile these files
-Please download all the stuffs in this folder or use your command and type:
-$ git clone 
+Please download all the stuffs in this folder or clone with your command 
+$ git clone "links"
 
 If you use the command line, there are two basic ways to complete my codes.
 
