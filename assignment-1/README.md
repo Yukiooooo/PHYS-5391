@@ -17,10 +17,13 @@ $ git clone
 
 If you use the command line, there are two basic ways to complete the .tex code.
 
-_Method 1: # using Makefile #_
-$ make % 
+__Method 1: # using Makefile #__
 
-_Method 2: # Compile by steps #
+$ make % very straghtforward 
+
+$ make clean % use this if you want to clear all the files created by $ make
+
+__Method 2: # Compile by steps #__
 
 $ pdflatex assignment1.tex
 
