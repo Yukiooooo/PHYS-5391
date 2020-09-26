@@ -6,6 +6,9 @@
 
 **sciprog_read_file.py** % this is my python code
 
+__ Part 1__ : used for processing IMF & SW data file
+__ Part 2__ : used for processing Dst data file
+
 **imf_aug2005.dat.dat** % this is the IMF data file to be tested reading
 
 **Dst_July2000.dat** % this is the Dst data file to be tested reading
