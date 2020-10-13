@@ -17,11 +17,13 @@
 Please download all the stuffs in this folder or clone with your command 
 $ git clone "links"
 
-If you use the command line, compile the Latex code with 
-
-$ pdflatex hw-3.tex
-
 In order to compile the python code, please use Spyder. If you use the command line, please choose python (not ipython), 
 remember to put the sciprog.py file in the same path with my_plot.py
 
 $ python my_plot.py
+
+If you use the command line, compile the Latex code with 
+
+$ pdflatex hw-3.tex
+
+
