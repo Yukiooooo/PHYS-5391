@@ -99,7 +99,7 @@ ax4.plot([0,23],[0,0],color='b',linestyle='dashdot',linewidth=1) # plot horizont
 ax0.legend(loc='best');  # set the position of the legend
 ax0.legend([r'B$_y$',r'B$_z$'],frameon=False) # remove the box of the legend
 
-
+fig1.savefig('./imf_dst.png')
 
 
 
