@@ -3,7 +3,7 @@
 ## Introduction to each file
 **hw-3.tex** % this is the source code of LaTex
 
-**imf_dst.png** % this is the figure to be inserted into the LaTex code and final .pdf
+**imf_dst.png** % the figure will be found in the same path of the python code and then to be inserted into the LaTex
 
 **sciprog.py** % this is the python module used for reading IMF data files
 
