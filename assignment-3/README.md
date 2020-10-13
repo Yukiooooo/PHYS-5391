@@ -26,4 +26,4 @@ If you use the command line, compile the Latex code with
 
 $ pdflatex hw-3.tex
 
-
+Sometimes there is missing in IMF & solar wind data, my general strategy is to create a new array structure with the size of column = num of seconds, row = variables we needed. Then calculate the corresponding seconds of each row of data with 'datetime', fill it into the corresponding position of our new array structure, and make the missing data time vacant. For this data file 'July 15 2000', this program can be ignored, thus I didn't add this process in my py code.
