@@ -9,6 +9,10 @@
 
 **my_plot.py** % this is the python code used for plotting IMF & solar wind and Dst index 
 
+**Dst_July2000.dat** % this is the Dst data to be used 
+
+**imf_jul15_2000.dat.dat** % this is the IMF & solar wind data to be used 
+
 ## How to compile these files
 Please download all the stuffs in this folder or clone with your command 
 $ git clone "links"
