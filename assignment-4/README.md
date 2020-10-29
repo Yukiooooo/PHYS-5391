@@ -33,3 +33,19 @@ $ pdflatex assignment1.tex
 $ bibtex assignment1 
 
 $ pdflatex assignment1.tex
+
+License.
+GNU GPL; see LICENSE.txt for more information
+
+Installation.
+None needed
+
+About.
+An implementation of the Weasel Program written in python.
+Demonstrates that the process of evolutionary systems, random variation combined with non-random cumulative selection, is different from pure chance.
+Usage.
+python weasel.py <mutation probability>
+<mutation probability> is optional; no argument => default of 1/2000
+then enter y or n to use locking
+System Requirements.
+python 3.x.
