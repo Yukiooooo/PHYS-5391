@@ -18,9 +18,13 @@ Please put these two codes together in the same path, in your command line first
 
 $ python weasel_pro.py
 
-_then compile this script in following way:_
+_Then compile this script in following way:_
 
 $ python weasel_script.py
+
+_To compile the Latex in following way:_
+
+$ pdflatex aweasel.tex
 
 
 ## System Requirements. ##
