@@ -13,15 +13,6 @@ numbers of offspring and mutation rate
 
 ## How to compile these files
 
-This is python script for using "Weasel Program", 
-    
-
-   
-then enter the desired number of offspring and mutation rate, then "Enter"
-==> you'll get the generations required to reach the target string :D   
-Please download all the stuffs in this folder or clone with your command 
-$ git clone "links"
-
 If you use the command line, it's straightforward to complete these codes.
 Please put these two codes together in the same path, in your command line first do:
 
