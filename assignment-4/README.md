@@ -2,50 +2,35 @@
 # This is an implementation of the Weasel Program written in python. #
 
 ## Introduction to each file
-**assignment1.tex** % this is the source code of LaTex
+**aweasel.tex** % this is the source code of LaTex
 
-**assignment1.bib** % this is the source code of BibTex
+**running_result.png** % this is the figure to be inserted into the LaTex code and final .pdf
 
-**Makefile** % this is the Makefile for compiling the above two codes
+**weasel_pro.py** % this is the python code of the function used for "weasel program"
 
-**rick-morty.png** % this is the figure to be inserted into the LaTex code and final .pdf
-
-**arrow.py** % this is the python code to be inserted into the final .pdf
+**weasel_script.py** % this is the python script for calculating the generations based on the given 
+numbers of offspring and mutation rate
 
 ## How to compile these files
+
+This is python script for using "Weasel Program", 
+    
+
+   
+then enter the desired number of offspring and mutation rate, then "Enter"
+==> you'll get the generations required to reach the target string :D   
 Please download all the stuffs in this folder or clone with your command 
 $ git clone "links"
 
-If you use the command line, there are two basic ways to complete my codes.
+If you use the command line, it's straightforward to complete these codes.
+Please put these two codes together in the same path, in your command line first do:
 
-__Method 1: # using Makefile #__
+$ python weasel_pro.py
 
-$ make % very straightforward to compile all the steps and get the final .pdf
+_then compile this script in following way:_
 
-$ make clean % use this if you want to clear all the files created by $ make
+$ python weasel_script.py
 
-__Method 2: # Compile by steps #__
 
-$ pdflatex assignment1.tex
-
-$ pdflatex assignment1.tex
-
-$ bibtex assignment1 
-
-$ pdflatex assignment1.tex
-
-License.
-GNU GPL; see LICENSE.txt for more information
-
-Installation.
-None needed
-
-About.
-An implementation of the Weasel Program written in python.
-Demonstrates that the process of evolutionary systems, random variation combined with non-random cumulative selection, is different from pure chance.
-Usage.
-python weasel.py <mutation probability>
-<mutation probability> is optional; no argument => default of 1/2000
-then enter y or n to use locking
-System Requirements.
-python 3.x.
+## System Requirements. ##
+python 3.x. & 2.7.x
