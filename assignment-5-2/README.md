@@ -70,7 +70,7 @@ $ ./heat.exe
 
 then a 'results.txt' output file is created, you can compare this data with the reference data via:
 
-$ diff results.txt results_correct.txt or use tkdiff
+$ diff results.txt results_correct_CN.txt or use tkdiff
   
 to get the plot, in your command line via:
 
