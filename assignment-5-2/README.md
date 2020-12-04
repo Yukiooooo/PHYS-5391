@@ -1,8 +1,8 @@
 Definitely this assignment should be my lowest graded assignment. LOL
 
-# This is a the instruction for what-to-do inside mod_heq & cn_heq folders
+# This is a what-to-do for mod_heq & cn_heq folders
 
-## Introduction to each file
+## Introduction to mod_heq folder
 **assignment1.tex** % this is the source code of LaTex
 
 **assignment1.bib** % this is the source code of BibTex
