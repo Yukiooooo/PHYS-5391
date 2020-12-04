@@ -31,6 +31,8 @@ $ ./*.py
 
 __Step 1: # downloading IMF files #__
 
+First, create a folder in your current directory to store the downloaded IMF files, here we name the folder as 'imf_data'
+
 $ ./spider.py
 
 
