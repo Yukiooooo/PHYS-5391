@@ -21,13 +21,13 @@ __Step 0: # adding execute permission #__
 
 You can compile all the python codes through: 
 
-$ python xxx.py
+$ python *.py
 
 Also, you can add permission and run them as scripts via:
 
 $ chmod +x xxx.py
 
-$ ./xxx.py
+$ ./*.py
 
 __Step 1: # downloading IMF files #__
 
