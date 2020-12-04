@@ -4,21 +4,42 @@ Definitely this assignment should be my lowest graded assignment. LOL
 
 ## Introduction to mod_heq
 
-**ModHeatEq.f90** % this is the Fortran module for calculating Heat Equation
+**ModHeatEq.f90** % the Fortran module for calculating Heat Equation
 
-**write2d.f90** % this is the Fortran code for writing output file of the results
+**write2d.f90** % the Fortran code for writing output file of the results
 
-**HeatEq.f90** % this is the 'Main Program' for calling modules and subroutines to calculate the Heat Equation
+**HeatEq.f90** % the 'Main Program' for calculating the Heat Equation (calling modules and subroutines)
 
-**Makefile** % this is the Makefile for compiling the above two codes
+**Makefile** % this is the Makefile for compiling the above three codes
 
-**rick-morty.png** % this is the figure to be inserted into the LaTex code and final .pdf
+**results_correct.txt** % the correct result used for comparing with the output file
 
-**arrow.py** % this is the python code to be inserted into the final .pdf
+**viz_results.py** % the python code used for visualization the output file
 
 ## How to compile these files
-Please download all the stuffs in this folder or clone with your command 
-$ git clone "links"
+Please download all the SIX files in this folder or clone my repository via:
+
+$ git clone https://github.com/Yukiooooo/PHYS-5391.git
+
+to compile these Fortran codes, please use command line via:
+
+$ make heat.exe 
+
+you'll get a executable heat.exe, in your command line, with:
+
+$ ./heat.exe 
+
+then a 'results.txt' output file is created, you can compare this data with the reference data via:
+
+$ diff results.txt results_correct.txt or use <tkdiff> instead of diff
+  
+to get the plot, in your command line via:
+
+$ make viz
+
+then you'll get the finally plot of the results of Heat Equation
+
+
 
 If you use the command line, there are two basic ways to complete my codes.
 
