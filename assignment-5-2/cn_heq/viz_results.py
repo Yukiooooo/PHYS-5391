@@ -80,4 +80,4 @@ if plt.isinteractive():
     plt.draw()
 else:
 #    plt.show()
-    plt.savefig("HEQ.png")
+    plt.savefig("CN_HEQ.png")
