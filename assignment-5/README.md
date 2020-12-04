@@ -12,6 +12,7 @@
 
 ## How to compile these files
 Please download all the stuffs in this folder or clone my repository in command via: 
+
 $ git clone https://github.com/Yukiooooo/PHYS-5391.git
 
 All the following steps can be achieved in command line:
