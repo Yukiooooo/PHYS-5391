@@ -30,9 +30,9 @@
 % Now, we start the work by entering the document with:
 \begin{document}  % always remember 'begin - end' pairs
 % Basic settings for the title page
-\title{\LaTeX: Phys 5391 Assignment Template} % title name
+\title{\LaTeX: Phys 5391 Assignment - 5} % title name
 \author{Yu Hong\\Space Physics Group} % double-slash for new line
-\date{September 10, 2020}  % or the \today command to insert today's date.
+\date{December 04, 2020}  % or the \today command to insert today's date.
 % Now setting the format of the article
 \maketitle % make a title based on  the info above
 \newpage % make a new page
@@ -61,22 +61,6 @@ In the past I basically used \textbf{Matlab} and a little \textsf{IDL} regarding
 am 100\% \textit{pythonic} dependent. In terms of numerical simulation, I use \textsc{Fortran 90} and work with \textbf{GITM}. 
 
 A minimal model for the evolution of the global dynamical state of the magnetotail during the substorm, involving only three simple rules has been developed. The model considers the general state of the magnetospheric system rather than concentrate on the physical nature of the substorm instability. When driven by a real solar wind power input, the minimal substorm model produces a probability distribution of times between substorm onsets that compares favourably with the distribution of 1001 inter-substorm intervals found by Borovsky et al. from observation. In this paper we examine the validity of the assumptions behind the model, specifically that the integrated solar wind input between two contiguous substorm onsets is proportional to the solar wind input at the time of the first substorm. We do this by comparing the integrated solar wind input between pairs of substorm onsets with the solar wind input at the time of the first substorm onset for a set of observed substorm pairs.
-
-
-
-
-\subsection{Programming Environment} % subsection II
-% \uuline{} --> make double underlines;  \uwave{} --> wavy underline; \texttt{} --> special font
-As a naive learner in space physics, I'm a traditional \uuline{OS X} user work on \uwave{Mac as a Linux Box}. 
-This means in most cases I use the \texttt{Command Line} for my research and meanwhile I also 
-like the point-and-click interfaces such as \textit{\textbf{Anaconda IDE}}   and \textit{\textbf{MS Office}} , 
-which seem to be easier to control. To open my terminal, I just directly click the terminal icon on the 
-toolbar or use \textbf{Command + Space} to open the \texttt{"Search"} window and enter \texttt{terminal}". % testing font styles
-
-\noindent % the first line indent is canceled. \textcolor{colortype}{} --> add color to the text inside the curly bracket
-I use \texttt{Emacs} as a powerful text and code editor, this allows me freely shuttle through my code. But when I write some large programs, I also use \texttt{IDE}, which will give me a clearer understanding of my process and the cause of errors. In terms of access CAEN computers, I use \textcolor{blue}{Texas Advanced Computing Center (TACC)} for highly performance computing. TACC comprises highly integrated and specialized environment for visualization, data analysis and storage, and is powerful for cloud, gateways \& portal interfaces. Both my personal laptops and the work computer in my office room are \textcolor{red}{Macbooks} . 
-
-
 
 
 
@@ -150,13 +134,33 @@ formats are \textbf{pdf} and \textbf{png}. I also tried \textbf{jpg} format, it 
 Figure \ref{fig:rick}! % this is the reference to the figure named "rick"
 \begin{figure}[!t] % !b for bottom, t for top; ! for good position
 \begin{center} % put the figure in the center 
-  \includegraphics[width=12cm,height=6cm]{fin.png} % changing figure size and rotate: scale=1.2, angle=45
+  \includegraphics[width=12cm,height=6cm]{seasonal_distribution.png} % changing figure size and rotate: scale=1.2, angle=45
   \caption{Crazy Ricky and helpless Morty.} % This figure is in the same path as the code
   \label{fig:rick} % label the figure with the unique name "rick"
 \end{center} % end the environment {center}
 \end{figure} % end the environment {figure}
 
 
+\section{Figures Environment} % Start a new section for figure
+% Package 'graphicx' is needed: already loaded
+\graphicspath{ {./images/} } % Added the Figure path, or you can put it directly the same path with this code
+This figure \textit{\textbf{Rick and Morty }} is from my favorite American \textit{adult animation}.
+
+The show revolves around the adventures of an eccentric and alcoholic mad scientist Rick and his grandpa Rick, 
+a kind-hearted but naïve boy. Their adventures often take place across an infinite number of realities, with the 
+characters travelling to other planets and dimensions through portals and Rick's flying car. Figure \ref{fig:rick} shows 
+the situation in the Lab, Rick is crazy making his equipment and his grandson, Morty,is waiting helpless.
+
+Mostly, I use the  {\tt pdflatex} command with my \textit{terminal} to compile \textit{.tex} codes. The acceptable figure 
+formats are \textbf{pdf} and \textbf{png}. I also tried \textbf{jpg} format, it seems work as well. 
+Figure \ref{fig:rick}! % this is the reference to the figure named "rick"
+\begin{figure}[!t] % !b for bottom, t for top; ! for good position
+\begin{center} % put the figure in the center 
+  \includegraphics[width=12cm,height=6cm]{Time Interval.png} % changing figure size and rotate: scale=1.2, angle=45
+  \caption{Crazy Ricky and helpless Morty.} % This figure is in the same path as the code
+  \label{fig:rick} % label the figure with the unique name "rick"
+\end{center} % end the environment {center}
+\end{figure} % end the environment {figure}
 
 
 
@@ -279,34 +283,6 @@ be used to calculate the global ionospheric currents and magnetic disturbations
 \citep[see][chap. 5]{Maute2017}.
 
 
-
-
-
-% =================================
-% This Section is regarding the assignment
-% =================================
-\newpage % start a new page
-\section{Regarding the Assignment} % start a new section 
-
-The example.tex and bibtex.bib files were successfully compiled on my Mac command line.
-Either with the Makefile or with commands step by step. The compiled .pdf file is same with 
-the .pdf file download from Canvas.
-
-\subsection{Questions to the Example.tex} % start a new subsection 
-
-An very important error I met when I tried to compile the example.tex with 
-the command \textbf{bibtex}, \emph{Note that we did NOT use the file extension!}  
-\begin{quote}  % This environment is used to set up the cition format
-% The environment verbatim is used to print exactly what you type in
-\begin{verbatim}
-bibtex example
-\end{verbatim} % end the environment {verbatim}
-\end{quote} % end the environment {quote}
-
-One more thing that needs attention: \textcolor{red}{only} the citations 
-cited in the code will be shown in the final .pdf, not all the references 
-in the bibtex file. I added several new citations in my bibtex.bib file in 
-the beginning, but they didn't appear in the .pdf file.
 
 \subsection{Links to my Github} % start a new subsection
 
