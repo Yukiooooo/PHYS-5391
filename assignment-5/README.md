@@ -11,28 +11,29 @@
 
 
 ## How to compile these files
-Please download all the stuffs in this folder or clone my repository in command via: 
+Please download all the stuffs in this folder or clone my repository in command line via: 
 
 $ git clone https://github.com/Yukiooooo/PHYS-5391.git
 
 All the following steps can be achieved in command line:
 
-__Step 0: # Adding execute permission #__
+__Step 0: # adding execute permission #__
 
 You can compile all the python codes through: 
 
 $ python xxx.py
 
-Also, you can add permission to these codes and run them as scripts via:
+Also, you can add permission and run them as scripts via:
 
 $ chmod +x xxx.py
+
+$ ./xxx.py
+
+__Step 1: # downloading IMF files #__
 
 $ ./spider.py
 
 
-__Method 1: # using Makefile #__
-
-$ make % very straightforward to compile all the steps and get the final .pdf
 
 $ make clean % use this if you want to clear all the files created by $ make
 
