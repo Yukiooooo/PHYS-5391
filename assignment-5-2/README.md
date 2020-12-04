@@ -41,22 +41,47 @@ $ ./viz_results.py results.txt
 
 then you'll get the finally plot of the results of Heat Equation, the .png will store inside the current directory with "Mod_HEQ.png"
 
+## Introduction to cn_heq
 
+**ModHeatCN.f90** % the Fortran module for calculating Heat Equation
 
-If you use the command line, there are two basic ways to complete my codes.
+**ModWrite2d.f90** % the Fortran code for writing output file of the results
 
-__Method 1: # using Makefile #__
+**nmum_e10_4.f90** % the 'Main Program' for calculating the Heat Equation (calling modules and subroutines)
 
-$ make % very straightforward to compile all the steps and get the final .pdf
+**Makefile** % this is the Makefile for compiling the above three codes
 
-$ make clean % use this if you want to clear all the files created by $ make
+**results_correct_CN.txt** % the correct result used for comparing with the output file
 
-__Method 2: # Compile by steps #__
+**viz_results.py** % the python code used for visualization the output file
 
-$ pdflatex assignment1.tex
+## How to compile these files
+Please download all the SIX files in this folder or clone my repository via:
 
-$ pdflatex assignment1.tex
+$ git clone https://github.com/Yukiooooo/PHYS-5391.git
 
-$ bibtex assignment1 
+to compile these Fortran codes, please use command line via:
 
-$ pdflatex assignment1.tex
+$ make 
+
+you'll get a executable heat.exe, in your command line, with:
+
+$ ./heat.exe 
+
+then a 'results.txt' output file is created, you can compare this data with the reference data via:
+
+$ diff results.txt results_correct.txt or use tkdiff
+  
+to get the plot, in your command line via:
+
+$ make viz or try:
+$ chmod +x viz_results.py 
+$ ./viz_results.py results.txt
+
+then you'll get the finally plot of the results of Heat Equation, the .png will store inside the current directory with "CN_HEQ.png"
+
+__Some Comments # Makefile #__
+
+1. To compile these Fortran codes inside cn_heq, you need to install the -llapack library or directly compile them in TACC: https://portal.tacc.utexas.edu/user-guides/, and change the $ gfortran to $ ifort, using -mkl library instead of -llapack
+2. All the above changes can be find inside the **Makefile** in cn_heq folder
+
