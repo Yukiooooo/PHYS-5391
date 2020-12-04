@@ -1,15 +1,14 @@
-# This is the work space for homework-5: Substorms Substorms Everywhere
+# This is the work space for Substorms Substorms Everywhere
 
 ## Introduction to each file
-**spider.py** % the python code for downloading imf files
+**spider.py** % the python code for downloading IMF files
 
-**assignment1.bib** % this is the source code of BibTex
+**sciprog.py** % the source code for reading IMF files
 
-**Makefile** % this is the Makefile for compiling the above two codes
+**msm.py** % the python script for MSM model: find substorms
 
-**rick-morty.png** % this is the figure to be inserted into the LaTex code and final .pdf
+**msm_eva.py** % the python code for analyzing the substorm results
 
-**arrow.py** % this is the python code to be inserted into the final .pdf
 
 ## How to compile these files
 Please download all the stuffs in this folder or clone with your command 
