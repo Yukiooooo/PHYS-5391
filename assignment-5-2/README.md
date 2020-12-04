@@ -1,11 +1,14 @@
 Definitely this assignment should be my lowest graded assignment. LOL
 
-# This is a what-to-do for mod_heq & cn_heq folders
+# This is a what-to-do for folders: mod_heq & cn_heq 
 
-## Introduction to mod_heq folder
-**assignment1.tex** % this is the source code of LaTex
+## Introduction to mod_heq
 
-**assignment1.bib** % this is the source code of BibTex
+**ModHeatEq.f90** % this is the Fortran module for calculating Heat Equation
+
+**write2d.f90** % this is the Fortran code for writing output file of the results
+
+**HeatEq.f90** % this is the 'Main Program' for calling modules and subroutines to calculate the Heat Equation
 
 **Makefile** % this is the Makefile for compiling the above two codes
 
