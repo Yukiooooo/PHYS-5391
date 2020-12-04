@@ -11,14 +11,23 @@
 
 
 ## How to compile these files
-Please download all the stuffs in this folder or clone with your command 
-$ git clone "links"
+Please download all the stuffs in this folder or clone my repository in command via: 
+$ git clone https://github.com/Yukiooooo/PHYS-5391.git
 
-$ python spider.py or 
-$ chmod +x spider.py
+All the following steps can be achieved in command line:
+
+__Step 0: # Adding execute permission #__
+
+You can compile all the python codes through: 
+
+$ python xxx.py
+
+Also, you can add permission to these codes and run them as scripts via:
+
+$ chmod +x xxx.py
+
 $ ./spider.py
 
-If you use the command line, there are two basic ways to complete my codes.
 
 __Method 1: # using Makefile #__
 
