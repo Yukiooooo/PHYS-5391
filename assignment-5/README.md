@@ -45,7 +45,7 @@ __Step 2: # finding substorms with MSM #__
 
 $ ./msm.py -h
 
-First, use the above command to check what arguments/options are needed to set: imffolder ==> ./imf_data; output_file ==> you can
+First, use the above command to check what arguments/options are needed: imffolder ==> ./imf_data; output_file ==> you can
 give any name you want; -D ==> here we use 2.69 hr; -N here we use 366, which is the days in a year (you can set -D as 1 for testing)
 
 $ ./msm.py ./imf_data/ output_file.txt -D 2.69 -N 366
