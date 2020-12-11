@@ -32,7 +32,7 @@ $ python *.py
 
 Also, you can run them as scripts by adding permission via:
 
-$ chmod +x xxx.py
+$ chmod +x *.py
 
 $ ./*.py
 
