@@ -11,6 +11,11 @@
 
 **assignment-5.tex** % the Latex code for creating the report .pdf file
 
+**dst_200301.png** % the DST figure to be inserted into the Latex code
+
+
+
+
 
 ## How to compile these files
 Please download all the stuffs in this folder or clone my repository in command line via: 
