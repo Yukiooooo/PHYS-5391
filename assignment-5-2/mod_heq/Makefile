@@ -26,4 +26,8 @@ heat.exe: $(DEPEND)
 
 clean: 
 	rm -f *.o *.exe *.mod *~ results.txt
+	
+viz: heat.exe
+	./$^
+	./viz_results.py results.txt
 
