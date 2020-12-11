@@ -17,7 +17,7 @@ Definitely this assignment should be my lowest graded assignment. LOL
 **viz_results.py** % the python code used for visualization the output file
 
 ## How to compile these files
-Please download all the SIX files in this folder or clone my repository via:
+Please download all the files in this folder or clone my repository via:
 
 $ git clone https://github.com/Yukiooooo/PHYS-5391.git
 
