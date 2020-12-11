@@ -60,9 +60,9 @@ $ ./msm.py ./imf_data/ output_file.txt -D 2.69 -N 366
 
 __Step 3: # evoluate substorms #__
 
-$./msm_eva.py -h
+Use this command to check what arguments/options are needed. Here, the output_file created in last step is needed:
 
-Similarly, use this command to check what arguments/options are needed. Here, the output_file created in last step needed to be added via:
+$./msm_eva.py -h
 
 $ ./msm_eva.py output_file.txt 
 
