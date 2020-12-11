@@ -84,8 +84,21 @@ $ ./viz_results.py results.txt
 
 then you'll get the finally plot of the results of Heat Equation, the .png will store inside the current directory with "CN_HEQ.png"
 
-__Some Comments # Makefile #__
+__Some Comments__
 
-1. To compile these Fortran codes inside cn_heq, you need to install the -llapack library or directly compile them in TACC: https://portal.tacc.utexas.edu/user-guides/, and change the $ gfortran to $ ifort, using -mkl library instead of -llapack
-2. All the above changes can be find inside the **Makefile** in cn_heq folder
+1. To compile these Fortran codes inside cn_heq, you need to install the -llapack library, e.g.,
+
+$ brew install lapack
+
+2. When using Mac to run the .exe in Fortran, sometimes you need to add the path of the dynamic library since they are not in your current 
+directory, in your command line via:
+
+$ otool -L heat.exe
+
+you'll get the path of your dynamics library, such as:
+
+/usr/local/opt/gcc/lib/gcc/10/libgfortran.5.dylib. then add this path to your _export_
+
+$ export DYLD_LIBRARY_PATH=/usr/local/opt/gcc/lib/gcc/10/
+
 
