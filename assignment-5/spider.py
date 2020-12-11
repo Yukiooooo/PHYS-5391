@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 import urllib.request# url request module
-import re            # regular expression
-import os            # global dirs
+import re            # regular expression module
+import os            # global dirs module
 import time          # time module
 '''
 This is the python code used for getting info
@@ -26,16 +26,16 @@ def IMF_Download(url,pattern,Directory):
     for href in hset:
         # 'if else' is used to distinguish the special case of only one link
         if(len(hset)>1):
-            link = url + href[0]
-            filename = os.path.join(Directory, href[0])
+            link = url + href[0] # get the downloading links for each data
+            filename = os.path.join(Directory, href[0]) # creating filename & path
             print("==> Downloading",filename)
-            urllib.request.urlretrieve(link, filename)
+            urllib.request.urlretrieve(link, filename) # downloading data to local with filename
             print("==> Succeed！")
-        else:
-            link = url +href
-            filename = os.path.join(Directory, href)
+        else: # used for the case of only one link
+            link = url + href # get the downloading links for all data
+            filename = os.path.join(Directory, href) # creating filename & path
             print("==> Downloading",filename)
-            urllib.request.urlretrieve(link, filename)
+            urllib.request.urlretrieve(link, filename) # downloading data to local with filename
             print("==> Succeed！")
             
         # Setting sleep time, anti-reptile
@@ -43,6 +43,6 @@ def IMF_Download(url,pattern,Directory):
 
 # Now, we download IMF files from the 'links' in year of '2003' and 
 # store them in the 'imf_data' folder inside the current directory
-IMF_Download('http://www-personal.umich.edu/~dwelling/imf_2003/',
-              '(imf2003(\d*).dat)',
-             './imf_data/')
+IMF_Download('http://www-personal.umich.edu/~dwelling/imf_2003/', # our link
+              '(imf2003(\d*).dat)', # our downloading keywords
+             './imf_data/') # our folder used for storing the data
