@@ -59,21 +59,9 @@ Similarly, use this command to check what arguments/options are needed. Here, th
 $ ./msm_eva.py output_file.txt 
 
 
+__Step 4: # create study report #__
 
+$ pdflatex assignment5.tex
 
+$ open assignment1.pdf
 
-
-
-
-
-$ make clean % use this if you want to clear all the files created by $ make
-
-__Method 2: # Compile by steps #__
-
-$ pdflatex assignment1.tex
-
-$ pdflatex assignment1.tex
-
-$ bibtex assignment1 
-
-$ pdflatex assignment1.tex
