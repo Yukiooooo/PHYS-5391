@@ -67,7 +67,7 @@ Use the above command to check what arguments/options are needed. Here, the outp
 $ ./msm_eva.py output_file.txt 
 
 
-__Step 4: # create study report #__
+__Step 4: # create substorm report #__
 
 $ pdflatex assignment5.tex
 
