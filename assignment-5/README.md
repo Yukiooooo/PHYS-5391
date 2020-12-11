@@ -9,7 +9,7 @@
 
 **msm_eva.py** % the python code for analyzing the substorm results
 
-**assignment-5.tex** % the Latex code for creating the report .pdf file
+**assignment5.tex** % the Latex code for creating the report .pdf file
 
 **dst_200301.png** % the DST figure to be inserted into the Latex code
 
