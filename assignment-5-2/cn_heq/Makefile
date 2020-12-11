@@ -6,10 +6,9 @@ default: heat.exe
 # variables:
 FLAGS = -fdefault-real-8
 OPT = -O3
-LIBS = -mkl
+LIBS = -llapack
 DFLAG = 
-LIB_MKL=/opt/intel/mkl/lib
-COMPILER = ifort $(FLAGS) $(DFLAG) $(OPT) -L$(LIB_MKL) $(LIBS)
+COMPILER = gfortran $(FLAGS) $(DFLAG) $(OPT) $(LIBS)
 DEPEND = \
 	ModWrite2d.o   \
 	ModHeatCN.o \
