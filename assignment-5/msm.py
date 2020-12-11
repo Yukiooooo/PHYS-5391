@@ -21,6 +21,7 @@ parser = ArgumentParser(description=__doc__)
 # Note how we use argparse to set defaults!
 # parser.add_argument('imffile', help='The name of the IMF input file to read.',
 #                     type=str)
+# read all IMF files inside the data downloaded folder
 parser.add_argument('imffolder', help='The name of the IMF Folder input file to read.',
                     type=str)
 parser.add_argument('-D', '--D', help='Value of the substorm time constant. '+
@@ -42,7 +43,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 from sciprog import ImfData, smartTimeTicks
-import glob # for global files
+import glob # module for global files
 #import pylab
 plt.interactive(True)
 
@@ -80,9 +81,9 @@ for ifile,filename in enumerate(sorted(dirs)):  # dirs[::100]
     # just happened, so our energy state is D*P below the energy
     # threshold value (assumed to be zero, see the powerpoint file).
     # Use the average epsilon value to initialize:
- #   energy[0] = -D*imf['epsilon'].mean()
- #   energy[0] = -D*imf['epsilon'][0]
-    energy[0] = -D*imf['epsilon'].max()
+    energy[0] = -D*imf['epsilon'].mean() # initial value with daily average
+ #   energy[0] = -D*imf['epsilon'][0] # initial value with the 00UT real data
+ #   energy[0] = -D*imf['epsilon'].max() # initial value with daily maximum
 
     # Integrate!
     # Loop over all subsequent time values.  "i" represents the
