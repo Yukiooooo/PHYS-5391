@@ -36,7 +36,9 @@ $ diff results.txt results_correct.txt or use tkdiff
 to get the plot, in your command line via:
 
 $ make viz or try:
+
 $ chmod +x viz_results.py 
+
 $ ./viz_results.py results.txt
 
 then you'll get the finally plot of the results of Heat Equation, the .png will store inside the current directory with "Mod_HEQ.png"
@@ -75,7 +77,9 @@ $ diff results.txt results_correct_CN.txt or use tkdiff
 to get the plot, in your command line via:
 
 $ make viz or try:
+
 $ chmod +x viz_results.py 
+
 $ ./viz_results.py results.txt
 
 then you'll get the finally plot of the results of Heat Equation, the .png will store inside the current directory with "CN_HEQ.png"
