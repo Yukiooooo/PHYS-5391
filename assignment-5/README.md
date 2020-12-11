@@ -71,5 +71,5 @@ __Step 4: # create substorm report #__
 
 $ pdflatex assignment5.tex
 
-$ open assignment1.pdf
+$ open assignment5.pdf
 
