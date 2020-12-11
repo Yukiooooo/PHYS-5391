@@ -9,6 +9,8 @@
 
 **msm_eva.py** % the python code for analyzing the substorm results
 
+**assignment-5.tex** % the Latex code for creating the report .pdf file
+
 
 ## How to compile these files
 Please download all the stuffs in this folder or clone my repository in command line via: 
