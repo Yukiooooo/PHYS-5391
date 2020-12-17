@@ -73,48 +73,27 @@ for ii in range(len(fac_tot)): # select hemispheres
         fac_ut = fac_sh[ii]# assignment our array
     else: # global average
         fac_ut = fac_tot[ii] # assignment our array
-        for jj, j_fac in enumerate(fac_ut): # write with loop
-            if jj <0:
-                continue
-#            # write the new struture into a txt file for GITM grids interface  
-        data_file.write('%7.2f'*90 %(fac_ut[0],fac_ut[1],fac_ut[2],fac_ut[3],fac_ut[4]\
-                        ,fac_ut[5],fac_ut[6],fac_ut[7],fac_ut[8],fac_ut[9],fac_ut[10] \
-                        ,fac_ut[11],fac_ut[12],fac_ut[13],fac_ut[14],fac_ut[15],fac_ut[16] \
-                        ,fac_ut[17],fac_ut[18],fac_ut[19],fac_ut[20],fac_ut[21],fac_ut[22] \
-                        ,fac_ut[23],fac_ut[24],fac_ut[25],fac_ut[26],fac_ut[27],fac_ut[28] \
-                        ,fac_ut[29],fac_ut[30],fac_ut[31],fac_ut[32],fac_ut[33],fac_ut[34] \
-                        ,fac_ut[35],fac_ut[36],fac_ut[37],fac_ut[38],fac_ut[39],fac_ut[40] \
-                        ,fac_ut[41],fac_ut[42],fac_ut[43],fac_ut[44],fac_ut[45],fac_ut[46] \
-                        ,fac_ut[47],fac_ut[48],fac_ut[49],fac_ut[50],fac_ut[51],fac_ut[52] \
-                        ,fac_ut[53],fac_ut[54],fac_ut[55],fac_ut[56],fac_ut[57],fac_ut[58] \
-                        ,fac_ut[59],fac_ut[60],fac_ut[61],fac_ut[62],fac_ut[63],fac_ut[64] \
-                        ,fac_ut[65],fac_ut[66],fac_ut[67],fac_ut[68],fac_ut[69],fac_ut[70] \
-                        ,fac_ut[71],fac_ut[72],fac_ut[73],fac_ut[74],fac_ut[75],fac_ut[76] \
-                        ,fac_ut[77],fac_ut[78],fac_ut[79],fac_ut[80],fac_ut[81],fac_ut[82] \
-                        ,fac_ut[83],fac_ut[84],fac_ut[85],fac_ut[86],fac_ut[87],fac_ut[88] \
-                        ,fac_ut[89]) + '\n') 
-
-#for ii in range(25):
-#    
-#        
-#data_file.write('%7.2f'*90 %(fac_ut[0],fac_ut[1],fac_ut[2],fac_ut[3],fac_ut[4]\
-#                ,fac_ut[5],fac_ut[6],fac_ut[7],fac_ut[8],fac_ut[9],fac_ut[10] \
-#                ,fac_ut[11],fac_ut[12],fac_ut[13],fac_ut[14],fac_ut[15],fac_ut[16] \
-#                ,fac_ut[17],fac_ut[18],fac_ut[19],fac_ut[20],fac_ut[21],fac_ut[22] \
-#                ,fac_ut[23],fac_ut[24],fac_ut[25],fac_ut[26],fac_ut[27],fac_ut[28] \
-#                ,fac_ut[29],fac_ut[30],fac_ut[31],fac_ut[32],fac_ut[33],fac_ut[34] \
-#                ,fac_ut[35],fac_ut[36],fac_ut[37],fac_ut[38],fac_ut[39],fac_ut[40] \
-#                ,fac_ut[41],fac_ut[42],fac_ut[43],fac_ut[44],fac_ut[45],fac_ut[46] \
-#                ,fac_ut[47],fac_ut[48],fac_ut[49],fac_ut[50],fac_ut[51],fac_ut[52] \
-#                ,fac_ut[53],fac_ut[54],fac_ut[55],fac_ut[56],fac_ut[57],fac_ut[58] \
-#                ,fac_ut[59],fac_ut[60],fac_ut[61],fac_ut[62],fac_ut[63],fac_ut[64] \
-#                ,fac_ut[65],fac_ut[66],fac_ut[67],fac_ut[68],fac_ut[69],fac_ut[70] \
-#                ,fac_ut[71],fac_ut[72],fac_ut[73],fac_ut[74],fac_ut[75],fac_ut[76] \
-#                ,fac_ut[77],fac_ut[78],fac_ut[79],fac_ut[80],fac_ut[81],fac_ut[82] \
-#                ,fac_ut[83],fac_ut[84],fac_ut[85],fac_ut[86],fac_ut[87],fac_ut[88] \
-#                ,fac_ut[89]) + '\n') 
+    for jj, j_fac in enumerate(fac_ut): # write with loop
+        if jj <0:
+            continue
+    # write the new struture into a txt file for GITM grids interface  
+    data_file.write('%7.2f'*90 %(fac_ut[0],fac_ut[1],fac_ut[2],fac_ut[3],fac_ut[4]\
+                    ,fac_ut[5],fac_ut[6],fac_ut[7],fac_ut[8],fac_ut[9],fac_ut[10] \
+                    ,fac_ut[11],fac_ut[12],fac_ut[13],fac_ut[14],fac_ut[15],fac_ut[16] \
+                    ,fac_ut[17],fac_ut[18],fac_ut[19],fac_ut[20],fac_ut[21],fac_ut[22] \
+                    ,fac_ut[23],fac_ut[24],fac_ut[25],fac_ut[26],fac_ut[27],fac_ut[28] \
+                    ,fac_ut[29],fac_ut[30],fac_ut[31],fac_ut[32],fac_ut[33],fac_ut[34] \
+                    ,fac_ut[35],fac_ut[36],fac_ut[37],fac_ut[38],fac_ut[39],fac_ut[40] \
+                    ,fac_ut[41],fac_ut[42],fac_ut[43],fac_ut[44],fac_ut[45],fac_ut[46] \
+                    ,fac_ut[47],fac_ut[48],fac_ut[49],fac_ut[50],fac_ut[51],fac_ut[52] \
+                    ,fac_ut[53],fac_ut[54],fac_ut[55],fac_ut[56],fac_ut[57],fac_ut[58] \
+                    ,fac_ut[59],fac_ut[60],fac_ut[61],fac_ut[62],fac_ut[63],fac_ut[64] \
+                    ,fac_ut[65],fac_ut[66],fac_ut[67],fac_ut[68],fac_ut[69],fac_ut[70] \
+                    ,fac_ut[71],fac_ut[72],fac_ut[73],fac_ut[74],fac_ut[75],fac_ut[76] \
+                    ,fac_ut[77],fac_ut[78],fac_ut[79],fac_ut[80],fac_ut[81],fac_ut[82] \
+                    ,fac_ut[83],fac_ut[84],fac_ut[85],fac_ut[86],fac_ut[87],fac_ut[88] \
+                    ,fac_ut[89]) + '\n') 
             
-
 data_file.close() # close the output file when finished
 
 
