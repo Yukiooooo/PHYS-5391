@@ -1,0 +1,263 @@
+% This is my final project "proposal" of PHYS 5391
+\documentclass[12pt, letterpaper]{article} % use 'tab' to complete 
+% which means this document is an article with 12pt (font size) and letterpaper (paper type)
+
+
+% ======================================================
+% This section is used for loading packages, a basic form looks like: 
+% ======================================================
+\usepackage{indentfirst} % indent the 1st line of the 1st paragraph, using \noindent to cancel
+\usepackage{ulem} % added lines for our text, i.e., underline...
+\usepackage{xcolor} % used for adding color to our text
+\usepackage{listings} % used for displaying the highlight code
+\usepackage{graphicx} % for using graphics
+\usepackage[authoryear]{natbib}   % for citing, more options see 'natbib'
+\usepackage[notref,notcite]{showkeys} % easy to check the #name of each \ref
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Now, we start the work by entering the document with:
+\begin{document}  % always remember 'begin - end' pairs
+% Basic settings for the title page
+\title{PHYS 5391 Final Project Report} % title name
+\author{\textbf{Let’s create an AMPERE FAC interface for GITM!} \\ \ \\Yu Hong\\Space Physics Group} % double-slash for new line
+\date{December 15, 2020}  % or the \today command to insert today's date.
+% Now setting the format of the article
+\maketitle % make a title based on  the info above
+\newpage % make a new page
+\tableofcontents % make a content page
+\newpage % make a new page
+
+
+% ======================================================
+% This section is used for introducing the "proposal"
+% ======================================================
+\section{Proposal Introduction} % Start a new section
+
+\noindent Following is the approved proposal. In general, I wish to make a reusable "\textcolor{red}{process tool}" instead of an one-time "\textcolor{blue}{event analysis}". I'll try to apply the knowledge I learned in this course to my final project as much as possible, and details will be introduced in the next following sections.
+
+\begin{quote}  % This environment is used to set up the cition format
+% The environment verbatim is used to print exactly what you type in
+\noindent GITM now is coupled with the NCAR-3Dynamo model for calculating the 3D ionospheric electric fields and global magnetic perturbations. With AMPERE observations, it is now possible to drive GCMs by FAC to represent M-I coupling. 
+
+\noindent \textbf{Problem}: what are the changes in the I-T system such as inter-hemispheric asymmetries when using real data drivers rather than empirical model? Let’s create a FAC interface for GITM. 
+
+\noindent 1.	Write a \textcolor{blue}{python} module that contains classes and functions to  \uline{open and parse the netCDF format FAC data } directly download from the AMPERE website,  \uline{analysis and quantity} the asymmetries between the northern and southern hemispheres,  \uline{write the selected FAC event into a properly formatted input file},  \uline{plotting the FAC results with matplotlib visualization};
+
+\noindent 2.	Write a \textcolor{blue}{Fortran} interface for GITM, including  \uline{read in the FAC input files}, interpolation and  \uline{assignment the data to the FAC structure} used in GITM-3Dynamo;
+
+\noindent 3.	Write a  \uline{Makefile \textcolor{blue}{script} to automatically compile and test the code}, use  \uline{the \textcolor{blue}{command-line} for running processes and scripts}, browsing files in directions (\textcolor{blue}{Emacs}). 
+\end{quote} % end the environment {quote}
+
+
+
+
+% ======================================================
+% This section is used for introducing the "Compile configuration"
+% ======================================================
+\section{Compile Configuration} % Start a new section
+\subsection{python section}
+
+\noindent For the python processing part, in order to read AMPERE FAC  \textbf{netCDF} format data,  \textbf{netCDF4} for python3 module is needed. Typically, there are two ways to get this module: first, \emph{if you run this project on the server (e.g. TACC)}, this module may have already been installed, please try:
+
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+$ module spider netCDF
+\end{verbatim} % end the environment {verbatim}
+
+\noindent The output will give you the specific details of the versions of netCDF you are available (e.g., netCDF4), then load the module via:
+
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+$ module load netCDF4
+\end{verbatim} % end the environment {verbatim}
+
+\noindent Then you will be able to compile my python codes; Secondly, more general, \emph{if you run this project on your local machine}, you need to install the netCDF4 module for your python, for me, my python is originally supported by Anaconda, thus I directly use:
+
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+$ conda install netCDF4
+\end{verbatim} % end the environment {verbatim}
+
+\noindent Similarly, you can use other package manager (make life a LOT easier) such as "pip" to install this module for your python. 
+
+\subsection{Fortran section}
+
+\noindent The name of the Fortran compiler will vary with personal preference, here we use "\textbf{gfortran}" to run this project locally. If you upload the Fortran part to a server as an interface for reading AMPERE FAC data, the compiler name may change case by case. For example, in TACC, you need to change "gfortran" into "\textbf{ifort}". 
+
+
+
+% ======================================================
+% This section is used for introducing the "proposal"
+% ======================================================
+\section{Python Section} % Start a new section
+
+\noindent  Unlike the IMF data, AMPERE FAC data does not have an API for batch downloading, which means we need to download data we need one by one. Thus, here we assume that the data has been selected in advance and downloaded in the ./data/ folder. We'll start with analyzing the AMPERE FAC netCDF data file.
+
+
+\noindent This time we used totally three python codes: \textbf{fac.py}, \textbf{fac\_{}funct.py} and \textbf{plot\_{}funct.py}. Obviously, the last two codes are our personal modules for processing AMPERE FAC data.  \textbf{fac\_{}funct.py} has tree functions, "read\_{}ampfac" is used for reading FAC data in netCDF format with variables we want; "build\_{}polar" is used for re-build the FAC data into polar coordinate with dimension mlt * mlat, which mlt is 24 and mlat is 50; "fac\_{}ave" is used for calculating the global NH-SH average FAC and re-build a typical GITM grid structure in mlt * mlat with mlt is 24 while mlat is 90 by adding zero values for the point with absolute Mlat below 40 degree. 
+
+
+\noindent "plot\_{}funct" is used for plotting our FAC data, the first function "plot\_{}fac" is used for plotting our FAC in both northern hemisphere (NH) and southern hemisphere (SH) basically; "plot\_{}colorbar" is used for plotting the colorbar; "plot\_{}info" is used for adding info such as axis labels, grids and title for our figure. 
+
+\noindent For the main program "fac.py", we directly use the functions from the above two module by "\textbf{from xxx import xxx}". Firstly, this python code read the input two netCDF files of FAC in both NH and SH; secondly, we re-build the matrix structure into polar coordinate and plot the FAC results in both NH and SH with output figure "\textcolor{orange}{FAC-2013031710.png}"; finally, we write the FAC data into two different files: "\textcolor{orange}{fac\_{}2013031710.txt}" is in typical space physics data format with ''yyyy-mm-dd hh-mm-ss'' and can be used for further study;  "\textcolor{orange}{fac\_{}2013031710\_{}2d.txt}" is re-build into a typical GITM grid with mlt*mlat size with mlt is 25 and mlat is 90, respectively. Both the two .txt files have an similar header as we used for IMF data and a "\textbf{\#START}" used for simulation identification of start time. The generated \textbf{figure} and \textbf{.txt file} are further used for\textbf{Latex} and \textbf{Fortran}, respectively. 
+
+
+% ======================================================
+% This section is used for the Fortran section
+% ======================================================
+\section{Fortran Section} % Start a new section
+
+the command \textbf{bibtex}, \emph{Note that we did NOT use the file extension!}  
+
+\noindent There are two \textbf{Fortran .f90} files used in this project. First, "\textbf{read\_{}ampfac.f90}" includes one main program and one subroutine inside the code. The subroutine is used for read-in python output file "\textbf{fac\_{}2013031710\_{}2d.txt}" into a same dimensional matrix variable "\textbf{fac\_{}obs}". The subroutine will read the header of the .txt file and start reading the FAC data when the "\textbf{\#START}" is recognized. Here, we use simple \textbf{read} and \textbf{write} function for this processing; secondly, "\textbf{print\_{}matrix.f90}" is used for quickly check the read-in FAC
+matrix with dimension you want (we use a 3*3 here). 
+
+\noindent You can use \textbf{make} command to directly compile these .f90 codes, a executable file "\textcolor{orange}{\textbf{j.exe}}" will be created. By running the exe  with ./j.exe, both the file header info and the quick checked matrix will be print in the terminal screen. Meantime, the FAC data will be stored in the variable "\textcolor{orange}{\\textbf{ac\_{}obs}}", then you can assign this variable into GITM-3Dynamo module when these .f90 codes are put together with the GITM source codes.
+
+\noindent As shown in below, you may meet this error when run the \textbf{.exe} file on your local Linux, this is because the \emph{compiler can't find your dynamic libraries in your current directory}.
+
+\begin{quote}  % This environment is used to set up the cition format
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+$ ./read_ampfac
+dyld: Library not loaded: @rpath/libgfortran.3.dylib
+	Referenced from: ./read_ampfac
+	Reason: image not found
+Abort trap: 6
+\end{verbatim} % end the environment {verbatim}
+\end{quote} % end the environment {quote}
+
+\noindent To solve this error, first check the directory of your dynamic library via:
+
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+$ otool -L read_ampfac
+\end{verbatim} % end the environment {verbatim}
+
+\noindent Then you'll get something like this:
+
+\begin{verbatim}
+read_ampfac:
+	@rpath/libgfortran.3.dylib (compatibility version 4.0.0)
+	/opt/anaconda3/lib/libgcc_s.1.dylib (compatibility version 1.0.0)
+\end{verbatim} % end the environment {verbatim}
+
+\noindent Add your directory path of the dynamic library via:
+
+\begin{verbatim}
+export DYLD_LIBRARY_PATH=/opt/anaconda3/lib/
+\end{verbatim} % end the environment {verbatim}
+
+
+%===========================================
+% Figure Section
+%===========================================
+\begin{figure}[!t] % !b for bottom, t for top; ! for good position                         
+\begin{center} % put the figure in the center
+  \includegraphics[width=13cm,height=9cm]{FAC-2013031710.png}
+  \caption{AMPERE FACs for 20130317 at 10:00 UT}
+  \label{fig:1}
+\end{center} % end the environment {center}                                                
+\end{figure} % end the environment {figure}  
+
+
+% ======================================================
+% This section is used for introducing the "Makefile"
+% ======================================================
+\section{Makefile Section} % Start a new section
+
+\noindent This Makefile compiling both Fortran and LaTex source codes. 
+
+\noindent To get the executable .exe from Fortran codes, directly use:
+\begin{verbatim}
+make 
+\end{verbatim} % end the environment {verbatim}
+
+
+\noindent To get the LaTex created pdf file within citations inside, directly use:
+\begin{verbatim}
+make pdf
+\end{verbatim} % end the environment {verbatim}
+
+\noindent You can also check other useful info via:
+\begin{verbatim}
+make help
+\end{verbatim} % end the environment {verbatim}
+
+% ======================================================
+% This section is used for introducing the "Scripting"
+% ======================================================
+\section{Scripting Section} % Start a new section
+
+\noindent To compile the whole project, run the \textbf{shell scripting} directly, it will take ten seconds to complete:
+
+\begin{verbatim}
+./run.sh
+\end{verbatim} % end the environment {verbatim}
+
+\noindent This script is a collection of commands: by adding executable permissions to all the python codes, the script first compiling the python codes, processing the AMPERE FAC data with one output figure " \textcolor{orange}{FAC-20130317.png}" and two txt files: one named "\textcolor{orange}{fac\_{}2013031710.txt}" is in typical space physics data format with ''yyyy-mm-dd hh-mm-ss'' can be used for further study; another file named "\textcolor{orange}{fac\_{}2013031710\_{}2d.txt}" is used for GITM. Finally, a "\textcolor{orange}{final.pdf}" file will be created and opened on your machine. Meanwhile, the 'tkdiff' command is used for comparing the created FAC .txt file and the original exited FAC .txt data file inside the ./data/ folder.
+
+
+% ======================================================
+% This section is used for introducing the "Latex"
+% ======================================================
+\section{Latex Section} % Start a new section
+
+\noindent That means this file. 
+
+
+
+\section{Citations Sections} % subsection for cases of citations
+% to cite a paper, there are two common ways: \cite{} and \citep{}, just put
+% the reference name (find in the Bibtex.bib file) inside the curly brackets
+% for inline citation, \citet{} is usful
+For high-latitude space physical environment, empirical models are very useful  
+\citet{weimer:1996}. A method has been developed to derive the electric potentials 
+in the high-latitude ionosphere resulting from IMF magnitude and orientation, solar 
+wind velocity, and dipole tilt angle \citep[chap. 2]{weimer:1996}. In principal, this 
+technique developed by {\tt weimer:1996} can be used as a forecast geomagnetic 
+disturbances. Similarly, there are also several empirical models for auroral particle 
+precipitation \cite[]{hardy:1989,Fuller-Rowell1987}, which are based on IMF and 
+solar wind conditions as well. 
+
+In order to fully understand the realistic process in the high-latitude ionosphere-
+thermosphere system, physical modes are essentially needed. The Global Ionosphere 
+Thermosphere Model (GITM) solves the complete vertical momentum equation, the 
+primary characteristics of non-hydrostatic effects on the upper atmosphere are 
+investigated \cite[p. 13]{Workayehu2019}. 
+
+Meantime, the NCAR-3Dynamo model can 
+be used to calculate the global ionospheric currents and magnetic disturbations 
+\citep[see][chap. 5]{Maute2017}.
+
+
+
+
+
+
+
+
+\section{Links to my Github} % start a new subsection
+\begin{quote} 
+% The environment verbatim is used to print exactly what you type in
+\begin{verbatim}
+https://github.com/Yukiooooo/PHYS-5391/tree/master/
+\end{verbatim} % end the environment {verbatim}
+\end{quote} % end the environment {quote}
+
+\noindent All the introductions are in the README.md file. 
+
+
+% ===================================================
+% This Section is the demonstration of  how to Use Bibtex 
+% ===================================================
+% for the bibliography, these two lines are Very Useful.
+\clearpage % make a new page 
+\addcontentsline{toc}{section}{Bibliography} % make a section in the table of contents
+% Using Bibtex, we just use these two lines to add the bib!
+\bibliographystyle{plainnat} % plainnat is the standard plain format
+\bibliography{final} % assignment1 is the name of my bibtex file
+
+% End the document environment.  This is the last line for coding
+\end{document}
